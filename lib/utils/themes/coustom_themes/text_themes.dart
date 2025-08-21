@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 class TTextTheme{
   TTextTheme._();
   static TextTheme LightTextTheme =TextTheme(
@@ -16,6 +18,10 @@ class TTextTheme{
 
     labelLarge: TextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.w600,color: Colors.black),
     labelMedium: TextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.w600,color: Colors.black),
+    labelSmall:GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w600,color: Colors.grey),
+
+
+
 
 
 

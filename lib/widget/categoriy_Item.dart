@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/constants/timage.dart';
+
 
 class CategoriyItem extends StatelessWidget {
   const CategoriyItem({
@@ -26,10 +28,10 @@ class CategoriyItem extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: const Color(0xFFFFFFFF)
             ),
-            child: Image.asset('lib/images/laptop.png',scale: 2,),
+            child: Image.asset(TImage.laptop,scale: 2,),
           ),
           SizedBox(height: 10),
-          Text(title,style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w300,color: Colors.black,height: 1),)
+          Text(title,style:Theme.of(context).textTheme.labelMedium)
         ],
       ),
     );

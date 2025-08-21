@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoping/utils/constants/timage.dart';
 class CustomItemWishList extends StatelessWidget {
   const CustomItemWishList({
     super.key, required this.title, required this.subtitle, required this.price, this.discount='',
@@ -30,15 +31,15 @@ crossAxisAlignment: CrossAxisAlignment.start,
                 color: Color(0XFFF3D9E8),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15))
             ),
-            child: Image.asset('lib/images/laptop.png'),
+            child: Image.asset(TImage.laptop),
           ),
           Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 5),
-            child: Text(title,style: GoogleFonts.poppins(fontSize: 13,fontWeight: FontWeight.w500,color: Colors.black),),
+            child: Text(title,style:GoogleFonts.poppins(fontSize: 13,fontWeight: FontWeight.w500,color: Colors.black),),
           ),
           Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 5),
-            child: Text(subtitle,style: GoogleFonts.poppins(fontSize: 11,fontWeight: FontWeight.w300,color: Color(0XFF8B9E9E)),),
+            child: Text(subtitle,style:GoogleFonts.poppins(fontSize: 11,fontWeight: FontWeight.w300,color: Color(0xFF8B9E9E)),),
           ),
           Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 5),

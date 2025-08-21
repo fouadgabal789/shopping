@@ -8,15 +8,18 @@ class CustomListTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(title,style: GoogleFonts.poppins(fontSize: 13,fontWeight: FontWeight.w600,color: Colors.black),),
-        Spacer(),
-        TextButton(onPressed: (){
-          Navigator.pushNamed(context, '/all_product_screen');
-        }, child: Text('See all',style: GoogleFonts.poppins(fontSize: 13,fontWeight: FontWeight.w500,color: Color(0XFF1CB069)),))
+    return Padding(
+      padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
+      child: Row(
+        children: [
+          Text(title,style:Theme.of(context).textTheme.bodyMedium,),
+          Spacer(),
+          TextButton(onPressed: (){
+            Navigator.pushNamed(context, '/all_product_screen');
+          }, child: Text('See all',style: GoogleFonts.poppins(fontSize: 13,fontWeight: FontWeight.w500,color: Color(0XFF1CB069)),))
 
-      ],
+        ],
+      ),
     );
   }
 }

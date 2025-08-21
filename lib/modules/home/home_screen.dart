@@ -6,6 +6,7 @@ import 'package:shoping/modules/home/side_drawer.dart';
 import 'package:shoping/widget/categoriy_Item.dart';
 import 'package:shoping/widget/widget_text_field.dart';
 
+import '../../utils/helper_function/thelper_functions.dart';
 import '../../widget/custom_item_wish_list.dart';
 import '../../widget/custom_list_titletext.dart';
 class HomeScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _searchcontroller =TextEditingController();
-    _pageController=PageController(viewportFraction: 0.7,initialPage: 1);
+    _pageController=PageController(viewportFraction: 0.8,initialPage: 1);
   }
   @override
   void dispose() {
@@ -32,9 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
+
       drawer: SideDrawer(),
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: false,
       
       appBar: AppBar(
@@ -70,19 +73,21 @@ class _HomeScreenState extends State<HomeScreen> {
             end: 0,
             child: Container(
               width: 375.w,
-              height: 600.h,
+              height: 650.h,
               decoration: BoxDecoration(
-                color: Color(0XFFE9F1F5)
+                color: dark? Color(0xFF06372E):Color(0xFFFFFFFF),
               ),
               child: ListView(
                 padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
                 children: [
+                  SizedBox(height: 15,),
                   ConstrainedBox(constraints: BoxConstraints(maxHeight: 100,),
                   child: GridView.builder(scrollDirection: Axis.horizontal,
                        itemCount: 5,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,mainAxisSpacing: 10,mainAxisExtent: 77), itemBuilder: (context,index){
                     return CategoriyItem(title: 'Electronic');
-    }),
+          }),
                   ),
+                  SizedBox(height: 15,),
                   ConstrainedBox(constraints: BoxConstraints(maxHeight: 125),
                   child: PageView.builder(itemCount: 3,onPageChanged: (int currentPage){
                     setState(() {
@@ -91,15 +96,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   },controller: _pageController,physics: BouncingScrollPhysics(),itemBuilder:(context,index){
                     return Container(
                       width: double.infinity,
-                      height: 120,
+                      height: 115,
                       margin: EdgeInsetsDirectional.symmetric(horizontal: 5),
                       decoration: BoxDecoration(
                         color: Color(0XFFDEDDFF),
                         borderRadius: BorderRadius.circular(15)
                       ),
-                      child: Image.asset('lib/images/laptop2.png'),
+                      child: Text(''),
                     );
                   } ),),
+                  SizedBox(height: 15,),
                   CustomListTitleText(title: 'New Product',),
                   GridView.builder(
                       shrinkWrap: true,

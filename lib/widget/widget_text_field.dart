@@ -31,9 +31,9 @@ final IconButton? suffix;
           fontWeight: FontWeight.w400,
         ),
 
-        suffix: suffix,
+        suffixIcon: suffix,
         prefix: prefix,
-        constraints: BoxConstraints(maxHeight: 43),
+        constraints: BoxConstraints(maxHeight: 50),
 
 
 

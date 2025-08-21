@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoping/utils/constants/ttext.dart';
 
+import '../../utils/helper_function/thelper_functions.dart';
 import '../../widget/app_elevated_buttom.dart';
 import '../../widget/app_text_field.dart';
 class ResetPassword extends StatefulWidget {
@@ -31,6 +33,8 @@ class _ResetPasswordState extends State<ResetPassword> {
   }
   @override
   Widget build(BuildContext context) {
+    final dark =THelperFunctions.isDarkMode(context);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
 
@@ -68,7 +72,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               width:380,
               height: 556,
               decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
+                  color:dark? Color(0xFF06372E):Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight:Radius.circular(20),)
               ),
               child: Padding(
@@ -78,18 +82,17 @@ class _ResetPasswordState extends State<ResetPassword> {
                   children: [
                     SizedBox(height: 20),
 
-                    Text('Enter Your New Password',style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.black),textAlign: TextAlign.start,),
-                    SizedBox(height: 20),
-                    Text('New password',style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    Text(TText.enternewpassword,style:Theme.of(context).textTheme.headlineSmall,textAlign: TextAlign.start,),
+                    SizedBox(height: 18),
+                    Text(TText.newpass,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'New password',keyboardType: TextInputType.text,controller: _emailcontroler,),
-                    SizedBox(height: 30),
-                    Text('Confirm password',style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    SizedBox(height: 28),
+                    Text(TText.confirmpassword,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'Confirm password',keyboardType: TextInputType.text,controller: _emailcontroler,),
                     SizedBox(height: 200),
                     Center(
                       child: AppElevatedButtom(title: 'Change Password',onPress:(){  },),
                     ),
-                    SizedBox(height: 30),
 
                   ],
                 ),

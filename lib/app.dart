@@ -13,6 +13,7 @@ import 'modules/home/bottom_navigation_bar_screen.dart';
 import 'modules/home/home_screen.dart';
 import 'modules/home/my_cart_screen.dart';
 import 'modules/home/shoes_detail_screen.dart';
+import 'modules/onbording/seplash_screen.dart';
 import 'modules/profile/my_account_screen.dart';
 
 class App extends StatelessWidget {
@@ -30,7 +31,7 @@ class App extends StatelessWidget {
             darkTheme:TAppTheme.DarkTheme,
 
             debugShowCheckedModeBanner: false,
-            initialRoute:'/On_bording_Screen',
+            initialRoute:'/SeplashScreen',
             routes: {
               '/login_screen': (context) => const LoginScreen(),
               '/regester_screen': (context) => const RegesterScreen(),
@@ -44,6 +45,7 @@ class App extends StatelessWidget {
               '/bottom_nav_screen': (context) => const BottomNavigationBarScreen(),
 
               '/On_bording_Screen': (context) => const OnbordingScreen(),
+              '/SeplashScreen': (context) => const SeplashScreen(),
 
 
 
