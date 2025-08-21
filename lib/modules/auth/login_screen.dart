@@ -63,8 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
 
                   children: [
-                    Text(TText.wellcome,style: Theme.of(context).textTheme.headlineMedium,),
-                    Text(TText.sublogin,style: Theme.of(context).textTheme.headlineMedium,),
+                    Text(TText.wellcome,style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: Colors.white),),
+                    Text(TText.sublogin,style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.white)),
                     SizedBox(height: 30.h,),
                     Row(
                       children: [
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width:375,
               height: 540,
               decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
+                  color: dark? Color(0xFF06372E):Color(0xFFFFFFFF),
                 borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight:Radius.circular(20),)
               ),
               child: Padding(
@@ -97,12 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 30.h),
-                    Text(TText.Emaillogin,style:Theme.of(context).textTheme.headlineMedium,),
+                    Text(TText.Emaillogin,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'Ruslandizeed@gmail.com',keyboardType: TextInputType.emailAddress,controller: _emailcontroler,errortext: erorrEmail,),
                     SizedBox(height: 30.h),
-                    Text('Password',style: Theme.of(context).textTheme.headlineMedium,),
+                    Text(TText.password,style: Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'password',keyboardType: TextInputType.visiblePassword,controller: _passwordcontroler,errortext: erorrPassword),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 10.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -114,24 +114,24 @@ class _LoginScreenState extends State<LoginScreen> {
                             });
                           },
                         ),
-                        Text(TText.Rememberlogin,style: GoogleFonts.poppins(fontSize: TSize.fontxs,fontWeight: FontWeight.w400,color: Color(0XFF899B9A)),),
+                        Text(TText.Rememberlogin,style:Theme.of(context).textTheme.labelMedium,),
                         Spacer(),
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context, '/forget_screen');
-                        }, child: Text(TText.forgotpassword,style:Theme.of(context).textTheme.headlineMedium,))
+                        }, child: Text(TText.forgotpassword,style:Theme.of(context).textTheme.labelMedium,))
                       ],
                     ),
-                    SizedBox(height: 70.h),
+                    SizedBox(height: 165.h),
                     Center(
                       child: AppElevatedButtom(title: 'Sign In',onPress:(){
                         performLogin();                    },),
                     ),
-                    SizedBox(height: 80.h),
+                    SizedBox(height: 30.h),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(TText.donthaveanaccoun,style:Theme.of(context).textTheme.headlineMedium,),
+                        Text(TText.donthaveanaccoun,style:Theme.of(context).textTheme.labelMedium,),
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context, '/regester_screen');
                         }, child: Text(TText.signup,style: GoogleFonts.poppins(fontSize: 13.sp,fontWeight: FontWeight.w500,color: Color(0xFFFF8933)),)),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoping/utils/constants/ttext.dart';
 
+import '../../utils/helper_function/thelper_functions.dart';
 import '../../widget/app_elevated_buttom.dart';
 import '../../widget/app_text_field.dart';
 class RegesterScreen extends StatefulWidget {
@@ -32,6 +34,7 @@ class _RegesterScreenState extends State<RegesterScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    final dark =THelperFunctions.isDarkMode(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
 
@@ -69,7 +72,7 @@ class _RegesterScreenState extends State<RegesterScreen> {
               width:380,
               height: 700.h,
               decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
+                  color: dark? Color(0xFF06372E):Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight:Radius.circular(20),)
               ),
               child: Padding(
@@ -79,34 +82,34 @@ class _RegesterScreenState extends State<RegesterScreen> {
                   children: [
                     Row(),
                     SizedBox(height: 10.h),
-                    Text('Full Name',style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    Text(TText.fullname,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'Zeed Ruslandi',keyboardType: TextInputType.text,controller: _emailcontroler,),
-                    SizedBox(height: 20.h),
-                    Text('Email Address',style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    SizedBox(height: 18.h),
+                    Text(TText.Emaillogin,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: 'password',keyboardType: TextInputType.emailAddress,controller: _passwordcontroler),
-                    SizedBox(height: 20.h),
-                    Text('Phone Number',style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    SizedBox(height: 18.h),
+                    Text(TText.phonenum,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: '+62 985 845 91240 ',keyboardType: TextInputType.phone,controller: _passwordcontroler),
-                    SizedBox(height: 20.h),
-                    Text('Password',style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    SizedBox(height: 18.h),
+                    Text(TText.password,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: '....................',keyboardType: TextInputType.visiblePassword,controller: _passwordcontroler),
-                    SizedBox(height: 20.h),
-                    Text('Confirm Password',style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0XFF8B9E9E)),),
+                    SizedBox(height: 18.h),
+                    Text(TText.confirmpassword,style:Theme.of(context).textTheme.bodyMedium,),
                     AppTextField(hint: '.....................',keyboardType: TextInputType.visiblePassword,controller: _passwordcontroler),
-                    SizedBox(height: 60.h),
+                    SizedBox(height: 58.h),
 
                     Center(
                       child: AppElevatedButtom(title: 'Sign Up',onPress:(){  },),
                     ),
-                    SizedBox(height: 40.h),
+                    SizedBox(height: 30.h),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Have an account?',style: GoogleFonts.poppins(fontSize: 13.sp,fontWeight: FontWeight.w500,color: Colors.black),),
+                        Text(TText.haveanaccount,style:Theme.of(context).textTheme.labelMedium,),
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context,  '/login_screen');
-                        }, child: Text('Sign In',style: GoogleFonts.poppins(fontSize: 13.sp,fontWeight: FontWeight.w500,color: Color(0xFFFF8933)),)),
+                        }, child: Text('Sign In',style: GoogleFonts.poppins(fontSize: 13.sp,fontWeight: FontWeight.w500,color: Color(0xFFFF8933)))),
 
                       ],
                     )

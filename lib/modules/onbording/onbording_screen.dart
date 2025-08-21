@@ -22,8 +22,10 @@ class OnbordingScreen extends StatefulWidget {
 class _OnbordingScreenState extends State<OnbordingScreen> {
   @override
   Widget build(BuildContext context) {
+    final dark =THelperFunctions.isDarkMode(context);
     final controler=Get.put(OnBordingController());
     return Scaffold(
+      backgroundColor: dark? Color(0xFF06372E):Color(0xFFFFFFFF),
       body: Stack(
         children: [
           PageView(
@@ -50,12 +52,15 @@ class OnBordingNextButtom extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final dark =THelperFunctions.isDarkMode(context);
     return Positioned(
-      right: TSize.defaultSpace,
-        bottom: 10,
-        child: ElevatedButton(
-        style: ElevatedButton.styleFrom(shape: CircleBorder(),backgroundColor:dark?TColors.green: Colors.black),
-        onPressed: ()=>OnBordingController.instace.netPage(), child: Icon(CupertinoIcons.arrow_right_to_line)));
+      right: 20,
+        bottom: 30,
+        child: Container(
+          width: 60,
+          height: 60,
+          child: ElevatedButton(
+          style: ElevatedButton.styleFrom(shape: CircleBorder(),backgroundColor:Color(0xFFFF8933)),
+          onPressed: ()=>OnBordingController.instace.netPage(), child: Icon(CupertinoIcons.arrow_right_to_line,color: Colors.white,)),
+        ));
   }
 }

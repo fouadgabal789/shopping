@@ -13,6 +13,16 @@ class TText{
   static const String forgotpassword='Forgot Password?';
   static const String donthaveanaccoun= 'Don’t have an account?';
   static const String signup=  'Sign Up';
+  static const String fullname= 'Full Name';
+  static const String phonenum=  'Phone Number';
+  static const String password=  'Password';
+  static const String confirmpassword=  'Confirm Password';
+  static const String haveanaccount=  'Have an account?';
+  static const String forgettitle= 'Please enter your email address below you will receive a link to create a new password via email';
+  static const String newpass= 'New Password';
+  static const String enternewpassword= 'Enter Your New Password';
+
+
 
 
 }

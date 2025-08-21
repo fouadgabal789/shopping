@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shoping/widget/OnBordingController.dart';
 
 import '../utils/constants/tsize.dart';
@@ -12,6 +14,6 @@ class OnBordingSkip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(top:TDeviceUtils.getStatusBarHeight( ),right: TSize.defaultSpace,child: TextButton(onPressed: ()=>OnBordingController.instace.skipPage(), child: Text('SKIP'),));
-  }
+    return Positioned(top:20,right: 20,child: TextButton(onPressed: ()=>OnBordingController.instace.skipPage(), child: Text('SKIP',style: GoogleFonts.poppins(fontSize: 18.sp,color: Color(0xFF80CBC4)),),));
+ }
 }
