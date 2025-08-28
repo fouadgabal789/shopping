@@ -26,6 +26,8 @@ class TTextTheme{
 
 
 
+
+
   );
   static TextTheme DarkTextTheme =TextTheme(
     headlineLarge: TextStyle().copyWith(fontSize: 32,fontWeight: FontWeight.bold,color: Colors.white),
